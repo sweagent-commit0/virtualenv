@@ -1,7 +1,5 @@
 """Errors."""
-
 from __future__ import annotations
-
 
 class ProcessCallFailedError(RuntimeError):
     """Failed a process call."""

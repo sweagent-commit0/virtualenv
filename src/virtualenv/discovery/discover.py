@@ -1,7 +1,5 @@
 from __future__ import annotations
-
 from abc import ABC, abstractmethod
-
 
 class Discover(ABC):
     """Discover and provide the requested Python interpreter."""
@@ -13,7 +11,7 @@ class Discover(ABC):
 
         :param parser: the CLI parser
         """
-        raise NotImplementedError
+        pass
 
     def __init__(self, options) -> None:
         """
@@ -32,17 +30,10 @@ class Discover(ABC):
 
         :return: the interpreter ready to use for virtual environment creation
         """
-        raise NotImplementedError
+        pass
 
     @property
     def interpreter(self):
         """:return: the interpreter as returned by :meth:`run`, cached"""
-        if self._has_run is False:
-            self._interpreter = self.run()
-            self._has_run = True
-        return self._interpreter
-
-
-__all__ = [
-    "Discover",
-]
+        pass
+__all__ = ['Discover']

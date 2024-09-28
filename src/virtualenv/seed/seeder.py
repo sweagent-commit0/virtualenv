@@ -1,7 +1,5 @@
 from __future__ import annotations
-
 from abc import ABC, abstractmethod
-
 
 class Seeder(ABC):
     """A seeder will install some seed packages into a virtual environment."""
@@ -25,19 +23,14 @@ class Seeder(ABC):
         :param app_data: the CLI parser
         :param interpreter: the interpreter this virtual environment is based of
         """
-        raise NotImplementedError
+        pass
 
     @abstractmethod
     def run(self, creator):
         """
         Perform the seed operation.
 
-        :param creator: the creator (based of :class:`virtualenv.create.creator.Creator`) we used to create this \
-        virtual environment
+        :param creator: the creator (based of :class:`virtualenv.create.creator.Creator`) we used to create this         virtual environment
         """
-        raise NotImplementedError
-
-
-__all__ = [
-    "Seeder",
-]
+        pass
+__all__ = ['Seeder']

@@ -1,9 +1,6 @@
 from __future__ import annotations
-
 from contextlib import suppress
-
 from .convert import convert
-
 
 def get_env_var(key, as_type, env):
     """
@@ -14,17 +11,5 @@ def get_env_var(key, as_type, env):
     :param env: environment variables to use
     :return:
     """
-    environ_key = f"VIRTUALENV_{key.upper()}"
-    if env.get(environ_key):
-        value = env[environ_key]
-
-        with suppress(Exception):  # note the converter already logs a warning when failures happen
-            source = f"env var {environ_key}"
-            as_type = convert(value, as_type, source)
-            return as_type, source
-    return None
-
-
-__all__ = [
-    "get_env_var",
-]
+    pass
+__all__ = ['get_env_var']
